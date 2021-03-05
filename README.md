@@ -1,7 +1,7 @@
 Alexaを使ってSlackへ投稿アプリ
 ====
 
-[Qiita]() にも記事として投稿しています。詳細はそちらを参照ください。
+[Qiita](https://qiita.com/Takayoshi_Makabe/items/8278aedb80014c2da04e) にも記事として投稿しています。詳細はそちらを参照ください。
 
 <br />
 
@@ -33,7 +33,7 @@ $ zip -r {ファイル名} index.js node_modules
 
 4. 下記記事を参考にAlexaSkillのスロット、インテントを作成
 
-「Alexa、出勤！」で快適なリモートワークを [[Qiita記事]]()
+「Alexa、出勤！」で快適なリモートワークを [[Qiita記事]](https://qiita.com/Takayoshi_Makabe/items/8278aedb80014c2da04e)
 
 5. Lambda関数のトリガーとして、先ほど作成したAlexaSkillを登録
 
