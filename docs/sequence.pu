@@ -1,0 +1,37 @@
+@startuml sequence
+/' define participants '/
+actor ユーザー
+
+ユーザー -> "Alexa Skill" : Alexa Skill 起動\n「Alexa、Slack開いて、◯◯」
+activate "Alexa Skill"
+"Alexa Skill" -> "AWS Lambda" : リクエスト
+note right: LaunchRequestHandler
+activate "AWS Lambda"
+"AWS Lambda" -> "Alexa Skill" : レスポンス
+deactivate "AWS Lambda"
+"Alexa Skill" -> ユーザー : 「Slackにどの様に投稿しますか？」
+ユーザー -> "Alexa Skill" : 「◯◯」
+"Alexa Skill" -> "AWS Lambda" : リクエスト
+note right: PostToSlackIntentHandler
+activate "AWS Lambda"
+"AWS Lambda" -> "Alexa Skill" : レスポンス
+deactivate "AWS Lambda"
+"Alexa Skill" -> ユーザー : 「Slackに◯◯とつぶやいてもよろしいですか？」
+ユーザー -> "Alexa Skill" : 「はい」
+"Alexa Skill" -> "AWS Lambda" : リクエスト
+note right: PostToSlackIntentHandler
+activate "AWS Lambda"
+"AWS Lambda" -> "Slack API" : リクエスト
+deactivate "AWS Lambda"
+activate "Slack API"
+"Slack API" -> "Slack Channel" : 「◯◯」投稿
+"Slack API" -> "AWS Lambda" : レスポンス
+deactivate "Slack API"
+activate "AWS Lambda"
+"AWS Lambda" -> "Claoud Watch Logs" : ログ出力
+"AWS Lambda" -> "Alexa Skill" : レスポンス
+deactivate "AWS Lambda"
+"Alexa Skill" -> ユーザー : 「Slackに◯◯とつぶやきました」
+deactivate "Alexa Skill"
+
+@enduml
