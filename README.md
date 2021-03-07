@@ -17,7 +17,7 @@ Alexaを使ってSlackへ投稿アプリ
 2. Lambda関数作成後、以下の手順でローカルからソースコードをアップロード
 
 ```
-$ git clone {このレポジトリ}
+$ git clone git@github.com:spider-man-tm/alexa-slack.git
 
 # クローンしたディレクトリに移動後、初期化＆必要なモジュールをインストール
 $ npm install
